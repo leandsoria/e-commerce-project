@@ -36,7 +36,3 @@ yarn-error.log*
 next-env.d.ts
 
 # tailwind 
-tailwind.config.js
-postcss.config.js
-
-#
