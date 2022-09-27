@@ -51,6 +51,7 @@ Sidemenu
 We need
 -Title [string]
 -Images [string]
+-Genre
 -Category Family[string]
 -Id [Number]
 -Price [Number]

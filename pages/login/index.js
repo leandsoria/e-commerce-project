@@ -47,10 +47,10 @@ const Login = () => {
   };
 
   return (
-    <section className="h-[600px] ">
-      <div className="h-full w-full py-24 px-16 max-w-7xl m-auto bg-gray-300 flex flex-col items-center">
+    <section className="h-[600px] mt-12 mb-24 ">
+      <div className="h-full w-full py-24 px-16 max-w-7xl m-auto bg-gray-300 flex flex-col items-center ">
         <div>
-          <h1>Log in!!</h1>
+          <h1 className="mb-8">Login</h1>
         </div>
         <form className="flex flex-col max-w-xs w-full">
           <label htmlFor="username" className="mb-2 font-semibold">

@@ -1,9 +1,7 @@
+import CustomOpening from '../../../components/Openings/CustomOpening';
+
 const WomenShoes = () => {
-  return (
-    <div>
-      <h1>Women Shoes</h1>
-    </div>
-  );
+  return <CustomOpening></CustomOpening>;
 };
 
 export default WomenShoes;

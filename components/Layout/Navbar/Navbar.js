@@ -86,6 +86,11 @@ const Navbar = () => {
               <FontAwesomeIcon icon={faUser} className=" text-orange-600" />
               <NavbarDropdownMenuList>
                 <NavbarDropdownMenuItem>{userEmail}</NavbarDropdownMenuItem>
+                <NavbarDropdownMenuItem>
+                  <Link href="/load-products">
+                    <a>Load Products</a>
+                  </Link>
+                </NavbarDropdownMenuItem>
                 <NavbarDropdownMenuItem onClick={authLogoutHandler}>
                   Logout{' '}
                   <FontAwesomeIcon
