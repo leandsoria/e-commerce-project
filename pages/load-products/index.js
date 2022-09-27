@@ -24,7 +24,7 @@ function writeUserData(
   });
 }
 
-const loadProducts = () => {
+const LoadProducts = () => {
   const titleRef = useRef();
   const genreRef = useRef();
   const categoryRef = useRef();
@@ -182,4 +182,4 @@ const loadProducts = () => {
   );
 };
 
-export default loadProducts;
+export default LoadProducts;
