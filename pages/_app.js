@@ -1,8 +1,8 @@
+import '../styles/globals.css';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 
 import { AuthContextProvider } from '../context/auth-context';
 import Layout from '../components/Layout/Layout';
-import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
   return (
