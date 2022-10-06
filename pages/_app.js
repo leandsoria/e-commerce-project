@@ -2,7 +2,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 
 import { AuthContextProvider } from '../context/auth-context';
 import Layout from '../components/Layout/Layout';
-import classes from '../styles/globals.css';
+import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
   return (
