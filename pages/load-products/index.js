@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { getDatabase, ref, set } from 'firebase/database';
 
 function writeUserData(
@@ -25,8 +25,9 @@ function writeUserData(
 }
 
 const LoadProducts = () => {
+  const [genreSelected, setGenreSelected] = useState('Woman');
+  const [categorySelected, setCategorySelected] = useState('Shoes');
   const titleRef = useRef();
-  const genreRef = useRef();
   const categoryRef = useRef();
   const priceRef = useRef();
   const idRef = useRef();
@@ -34,16 +35,24 @@ const LoadProducts = () => {
   const imageUrlRef = useRef();
   const stockRef = useRef();
 
+  const genreHanlder = (e) => {
+    setGenreSelected(e.target.value);
+  };
+  const categoryHandler = (e) => {
+    console.log(e.target.value);
+    setCategorySelected(e.target.value);
+  };
+
   const submitHandler = (e) => {
+    e.preventDefault();
     const title = titleRef.current.value;
-    const genre = genreRef.current.value;
-    const category = categoryRef.current.value;
+    const genre = genreSelected;
+    const category = categorySelected;
     const price = priceRef.current.value;
     const id = idRef.current.value;
     const description = descriptionRef.current.value;
     const imageUrl = imageUrlRef.current.value;
     const stock = stockRef.current.value;
-    e.preventDefault();
     if (
       title === '' ||
       genre === '' ||
@@ -67,8 +76,6 @@ const LoadProducts = () => {
       stock
     );
     titleRef.current.value = '';
-    genreRef.current.value = '';
-    categoryRef.current.value = '';
     priceRef.current.value = '';
     idRef.current.value = '';
     descriptionRef.current.value = '';
@@ -76,7 +83,6 @@ const LoadProducts = () => {
     stockRef.current.value = '';
     console.log('Product updated');
   };
-
   return (
     <section className="min-h-[400px] w-full flex flex-col justify-center items-center">
       <div className="py-24">
@@ -96,25 +102,33 @@ const LoadProducts = () => {
           <label className="font-semibold mb-2 mt-4 uppercase text-lg">
             Genre:
           </label>
-          <input
-            type="name"
-            id="genre"
-            ref={genreRef}
-            placeholder="Genre"
+          <select
+            name="genre"
             className="px-4 py-2 border-2 border-gray-400 rounded-md outline-none focus:border-orange-300 transition-colors duration-200 w-full"
+            value={genreSelected}
+            onChange={genreHanlder}
             required
-          />
+          >
+            <option value="Women">Woman</option>
+            <option value="Men">Men</option>
+            <option value="Children">Children</option>
+          </select>
+
           <label className="font-semibold mb-2 mt-4 uppercase text-lg">
             Category:
           </label>
-          <input
-            type="name"
-            id="category"
-            ref={categoryRef}
-            placeholder="Category"
+          <select
+            name="genre"
             className="px-4 py-2 border-2 border-gray-400 rounded-md outline-none focus:border-orange-300 transition-colors duration-200 w-full"
+            value={categorySelected}
+            onChange={categoryHandler}
             required
-          />
+          >
+            <option value="Shoes">Shoes</option>
+            <option value="Shirt">Shirt</option>
+            <option value="Pants">Pants</option>
+          </select>
+
           <label className="font-semibold mb-2 mt-4 uppercase text-lg">
             Price
           </label>
@@ -163,7 +177,7 @@ const LoadProducts = () => {
             Stock:
           </label>
           <input
-            type="name"
+            type="number"
             id="stock"
             ref={stockRef}
             placeholder="Stock available"

@@ -41,37 +41,55 @@ const Navbar = () => {
             Women
             <NavbarDropdownMenuList>
               <NavbarDropdownMenuItem>
-                <Link href="/women/shoes">Shoes</Link>
+                <Link href="/women/shoes">
+                  <a className="px-4 py-2 block">Shoes</a>
+                </Link>
               </NavbarDropdownMenuItem>
               <NavbarDropdownMenuItem>
-                <Link href="/women/shirt">Shirt</Link>
+                <Link href="/women/shirt">
+                  <a className="px-4 py-2 block">Shirt</a>
+                </Link>
               </NavbarDropdownMenuItem>
               <NavbarDropdownMenuItem>
-                <Link href="/women/pants">Pants</Link>
+                <Link href="/women/pants">
+                  <a className="px-4 py-2 block">Pants</a>
+                </Link>
               </NavbarDropdownMenuItem>
             </NavbarDropdownMenuList>
           </NavbarMainItemDropdown>
           <NavbarMainItemDropdown>
             Men
             <NavbarDropdownMenuList>
-              <NavbarDropdownMenuItem>Shoes</NavbarDropdownMenuItem>
-              <NavbarDropdownMenuItem>Shirt</NavbarDropdownMenuItem>
-              <NavbarDropdownMenuItem>Pants</NavbarDropdownMenuItem>
+              <NavbarDropdownMenuItem>
+                <a className="px-4 py-2 block">Shoes</a>
+              </NavbarDropdownMenuItem>
+              <NavbarDropdownMenuItem>
+                <a className="px-4 py-2 block">Shirt</a>
+              </NavbarDropdownMenuItem>
+              <NavbarDropdownMenuItem>
+                <a className="px-4 py-2 block">Pants</a>
+              </NavbarDropdownMenuItem>
             </NavbarDropdownMenuList>
           </NavbarMainItemDropdown>
           <NavbarMainItemDropdown>
             Children
             <NavbarDropdownMenuList>
-              <NavbarDropdownMenuItem>Shoes</NavbarDropdownMenuItem>
-              <NavbarDropdownMenuItem>Shirt</NavbarDropdownMenuItem>
-              <NavbarDropdownMenuItem>Pants</NavbarDropdownMenuItem>
+              <NavbarDropdownMenuItem>
+                <a className="px-4 py-2 block">Shoes</a>
+              </NavbarDropdownMenuItem>
+              <NavbarDropdownMenuItem>
+                <a className="px-4 py-2 block">Shirt</a>
+              </NavbarDropdownMenuItem>
+              <NavbarDropdownMenuItem>
+                <a className="px-4 py-2 block">Pants</a>
+              </NavbarDropdownMenuItem>
             </NavbarDropdownMenuList>
           </NavbarMainItemDropdown>{' '}
           {!authToken && (
             <NavbarMainItem>
               <Link href="/login">
                 <a className="w-full h-full px-4 py-2 hover:bg-gray-50 rounded-md transition-colors duration-200">
-                  Login{' '}
+                  Login
                   <FontAwesomeIcon
                     icon={faRightToBracket}
                     className=" text-orange-600"
@@ -82,21 +100,25 @@ const Navbar = () => {
           )}
           {authToken && (
             <NavbarMainItemDropdown>
-              Account{' '}
+              Account
               <FontAwesomeIcon icon={faUser} className=" text-orange-600" />
               <NavbarDropdownMenuList>
-                <NavbarDropdownMenuItem>{userEmail}</NavbarDropdownMenuItem>
+                <NavbarDropdownMenuItem>
+                  <a className="px-4 py-2 block">{userEmail}</a>
+                </NavbarDropdownMenuItem>
                 <NavbarDropdownMenuItem>
                   <Link href="/load-products">
-                    <a>Load Products</a>
+                    <a className="px-4 py-2 block">Load Products</a>
                   </Link>
                 </NavbarDropdownMenuItem>
                 <NavbarDropdownMenuItem onClick={authLogoutHandler}>
-                  Logout{' '}
-                  <FontAwesomeIcon
-                    icon={faRightFromBracket}
-                    className=" text-orange-600"
-                  />
+                  <span className="px-4 py-2 block">
+                    Logout
+                    <FontAwesomeIcon
+                      icon={faRightFromBracket}
+                      className=" text-orange-600"
+                    />
+                  </span>
                 </NavbarDropdownMenuItem>
               </NavbarDropdownMenuList>
             </NavbarMainItemDropdown>
